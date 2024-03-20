@@ -61,13 +61,16 @@ class CreateAccount:
         self.passwordInput = tk.Entry(self.createAccountFrame, show="*")
         self.passwordInput.grid(row=3, column=0, pady=5)
 
-        repeatPasswordLabel = tk.Label(self.createAccountFrame, text="Password")
+        repeatPasswordLabel = tk.Label(self.createAccountFrame, text="Repeat Password")
         repeatPasswordLabel .grid(row=4, column=0)
         self.repeatPasswordInput = tk.Entry(self.createAccountFrame, show="*")
         self.repeatPasswordInput.grid(row=5, column=0, pady=5)
 
         createAccount = tk.Button(self.createAccountFrame, text="Create Account", bd="2", command=self.createAccount)
         createAccount.grid(row=6, column=0, pady=5)
+
+        returnToLoginButton = tk.Button(self.createAccountFrame, text="Return To Login", bd="2", command=self.returnToLogin)
+        returnToLoginButton.grid(row=7, column=0, pady=5)
 
     def createAccount(self):
         if self.passwordInput.get() != self.repeatPasswordInput.get():
@@ -79,3 +82,8 @@ class CreateAccount:
         else:
             # sql query
             return
+
+    def returnToLogin(self):
+        login  = LoginPage(self.root)
+        self.createAccountFrame.destroy()
+        login.loginFrame.place(rely=.5, anchor="w")
