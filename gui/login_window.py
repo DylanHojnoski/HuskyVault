@@ -1,8 +1,8 @@
 import tkinter as tk
-from tkinter.messagebox import showerror, showwarning, showinfo
+from tkinter.messagebox import showerror
 
 
-class LoginPage:
+class LoginWindow:
     def __init__(self, root):
         self.root = root
         self.username = ""
@@ -84,6 +84,6 @@ class CreateAccount:
             return
 
     def returnToLogin(self):
-        login  = LoginPage(self.root)
+        login = LoginWindow(self.root)
         self.createAccountFrame.destroy()
         login.loginFrame.place(rely=.5, anchor="w")
