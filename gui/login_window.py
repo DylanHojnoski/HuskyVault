@@ -81,6 +81,8 @@ class CreateAccount:
             return
         else:
             # sql query
+            
+            self.returnToLogin()
             return
 
     def returnToLogin(self):
