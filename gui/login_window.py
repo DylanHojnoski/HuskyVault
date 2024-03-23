@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter.messagebox import showerror
+from db.database import login, create_account
 
 
 class LoginWindow:
@@ -38,6 +39,7 @@ class LoginWindow:
             return
         else:
             # sql query
+            login(self.usernameInput.get(), self.passwordInput.get())
             return
 
     def createAccountPage(self):
@@ -81,6 +83,7 @@ class CreateAccount:
             return
         else:
             # sql query
+            create_account(self.usernameInput.get(), self.passwordInput.get())
             
             self.returnToLogin()
             return

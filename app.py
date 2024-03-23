@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import font
 import gui.login_window as login_window
+from db.database import create_tables
 
 
 class Window(tk.Frame):
@@ -17,6 +18,8 @@ root = tk.Tk()
 text = tk.Text(root)
 root.wm_title("Husky Vault")
 app = Window(root)
+create_tables()
+
 
 loginWindow = login_window.LoginWindow(root)
 loginWindow.loginFrame.place(rely=.5, anchor="w")
