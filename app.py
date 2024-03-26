@@ -15,8 +15,9 @@ class Window(tk.Frame):
 
 
 root = tk.Tk()
-text = tk.Text(root)
 root.wm_title("Husky Vault")
+root.geometry("500x500")
+text = tk.Text(root)
 app = Window(root)
 create_tables()
 

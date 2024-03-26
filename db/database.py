@@ -40,7 +40,9 @@ def login(usernamein, passwordin):
     password_result = c.fetchone()
 
 # Check if the username and password match
-    if username_result[0] is not None and password_result is not None and passwordin == password_result[0]:
+    if username_result is None or password_result is None:
+        messagebox.showerror("Login Failed", "Invalid username or password")
+    elif username_result[0] is not None and password_result is not None and passwordin == password_result[0]:
         messagebox.showinfo("Login Successful", "Welcome, " + usernamein + "!")
     else:
         messagebox.showerror("Login Failed", "Invalid username or password")
